@@ -14,7 +14,11 @@
     "@distube/yt-dlp": "^2.0.1",
     "child_process": "^1.0.2",
     "cors": "^2.8.5",
+    "distube": "^5.0.6",
     "express": "^4.21.2",
     "nodemon": "^2.0.21"
+  },
+  "devDependencies": {
+    "is-ci": "^4.1.0"
   }
 }
