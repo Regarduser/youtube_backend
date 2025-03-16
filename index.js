@@ -16,6 +16,17 @@ app.get("/info", (req, res) => {
 
     console.log(`👉 Received URL: ${url}`);
 
+    // const fs = require('fs');
+
+    // const cookies = JSON.parse(fs.readFileSync('cookies.json'));
+    // const netscapeCookies = cookies.map(cookie => {
+    // return `${cookie.domain}\tTRUE\t${cookie.path}\t${cookie.secure ? 'TRUE' : 'FALSE'}\t${cookie.expirationDate}\t${cookie.name}\t${cookie.value}`;
+    // }).join('\n');
+
+    // fs.writeFileSync('cookies.txt', netscapeCookies);
+    // console.log('✅ Cookies converted to Netscape format.');
+
+
     const command = `yt-dlp -j -f "bestaudio+bestvideo/best" --cookies cookies.txt ${url}`;
 exec(command, (error, stdout, stderr) => {
     if (error) {
