@@ -16,7 +16,7 @@ app.get("/info", (req, res) => {
 
     console.log(`👉 Received URL: ${url}`);
 
-    const command = `yt-dlp -j -f "bestaudio+bestvideo/best" ${url}`;
+    const command = `yt-dlp -j -f "bestaudio+bestvideo/best" --cookies-from-browser chrome ${url}`;
 exec(command, (error, stdout, stderr) => {
     if (error) {
         console.error(`❌ Error fetching video info: ${error.message}`);
